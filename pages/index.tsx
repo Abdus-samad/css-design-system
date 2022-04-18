@@ -1,18 +1,19 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import Header from '../components/Header';
+import { navigation } from '../data';
 
 export default function Indexpage() {
 	const [drawer, setDrawer] = useState(false);
 	const handleClick = () => setDrawer(!drawer);
-	
+
 	return (
 		<section className='home'>
-			<a href='#main' className='skip-to-content'>
-				Skip to content
-			</a>
-
+			<Head>
+				<title>Space X</title>
+			</Head>
 			<header className='primary-header flex '>
 				<div>
 					<img
@@ -41,30 +42,12 @@ export default function Indexpage() {
 								Menu
 							</span>
 						</button>
-						<Link href='/'>
-							<a className=' active uppercase text-white letter-spacing-2'>
-								<span aria-hidden='true'>00</span> Home
-							</a>
-						</Link>
-						<Link href='/destination'>
-							<a className='uppercase text-white letter-spacing-2'>
-								<span aria-hidden='true'>01</span> Destination
-							</a>
-						</Link>
-						<Link href='/crews'>
-							<a className='uppercase text-white letter-spacing-2'>
-								<span aria-hidden='true'>02</span> Crew
-							</a>
-						</Link>
-						<Link href='/technology'>
-							<a className='uppercase text-white letter-spacing-2'>
-								<span>03</span> Technology
-							</a>
-						</Link>
+						{navigation.map((link, index) => (
+							<Header link={link} key={index} />
+						))}
 					</ul>
 				</nav>
 			</header>
-
 			<main id='main' className='grid-container grid-container--home'>
 				<div>
 					<h1 className='text-accent fs-500 uppercase letter-spacing-1'>

@@ -110,7 +110,9 @@ select {
 .flow > *:where(:not(:first-child)) {
 	margin-top: var(--flow-space, 1rem);
 }
-
+.flow--space-small {
+	--flow-space: 0.75rem;
+}
 .container {
 	padding-inline: 0 2em;
 	margin-inline: auto;
@@ -368,7 +370,7 @@ select {
 		display: block;
 		position: relative;
 		height: 1px;
-		width: 30%;
+		width: 100%;
 		margin-right: -2.5rem;
 		background: hsl(var(--clr-white) / 0.25);
 		order: 1;
@@ -382,8 +384,9 @@ select {
 .underline-indicators > * {
 	border: 0;
 	cursor: pointer;
-	padding: var(--underline-gap, 1rem) 0;
+	padding: var(--underline-gap, 0.75rem) 0;
 	border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+	background-color: transparent;
 }
 
 .underline-indicators > *:hover,
@@ -416,7 +419,7 @@ select {
 	background-color: hsl(var(--clr-white) / 0.5);
 }
 
-.dot-indicators > [aria-selected='true'] {
+.dot-indicators > .active {
 	background-color: hsl(var(--clr-white) / 1);
 }
 
@@ -460,6 +463,8 @@ select {
 	grid-area: title;
 }
 .destination {
+	background-position: center center;
+	background-size: cover;
 	background-image: url(/assets/destination/background-destination-mobile.jpg);
 }
 .grid-container--destination {
@@ -491,6 +496,12 @@ select {
 	margin-top: 2.5rem;
 }
 /* crew layout */
+.crew {
+	background-image: url(/assets/crew/background-crew-mobile.jpg);
+	background-position: bottom center;
+	background-size: cover;
+}
+
 .grid-container--crew {
 	--flow-space: 2rem;
 	grid-template-areas:
@@ -513,11 +524,15 @@ select {
 .grid-container--crew > .crew-details {
 	grid-area: content;
 }
+
+.crew-details h2 {
+	color: hsl(var(--clr-white) / 0.5);
+}
 /* --------------------- */
 /* Responsiveness       */
 /* -------------------- */
 
-@media (min-width: 30rem) {
+@media (min-width: 35rem) {
 	.home {
 		background-position: center center;
 		background-image: url(/assets/home/background-home-tablet.jpg);
@@ -526,11 +541,15 @@ select {
 		background-position: center center;
 		background-image: url(/assets/destination/background-destination-tablet.jpg);
 	}
+	.crew {
+		background-position: center center;
+		background-image: url(/assets/crew/background-crew-tablet.jpg);
+	}
 	:root {
 		--fs-800: 5rem;
 		--fs-700: 2.5rem;
 		--fs-600: 1.5rem;
-		--fs-500: 1.75rem;
+		--fs-500: 1.25rem;
 		--fs-400: 1rem;
 	}
 
@@ -561,13 +580,16 @@ select {
 	.destination {
 		background-image: url(/assets/destination/background-destination-desktop.jpg);
 	}
-
+	.crew {
+		background-position: center center;
+		background-image: url(/assets/crew/background-crew-desktop.jpg);
+	}
 	:root {
 		/* font-sizes */
 		--fs-800: 6.25rem;
 		--fs-700: 3.5rem;
 		--fs-600: 2rem;
-		--fs-500: 1.65rem;
+		--fs-500: 1.75rem;
 		--fs-400: 1.125rem;
 	}
 	.grid-container {
@@ -602,16 +624,24 @@ select {
 			'. image  content .';
 	}
 
-	.grid-container--destination > img,
-	.grid-container--crew > img {
+	.grid-container--destination > img {
 		max-width: 90%;
 	}
+	.grid-container--crew > img {
+		grid-column: span 2;
+		align-self: end;
+		max-width: 90%;
+	}
+	.grid-container--crew{
+		grid-template-columns:
+			minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 35rem)
+			minmax(1rem, 1fr);
 
-	.grid-container--crew {
+		justify-items: start;
 		grid-template-areas:
 			'. title title .'
-			'. content image.'
-			'. tabs image.';
+			'. content image .'
+			'. tabs image .';
 	}
 
 	.grid-container--crew > .dot-indicators {

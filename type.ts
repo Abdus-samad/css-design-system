@@ -14,3 +14,14 @@ export interface INav {
 	number: string;
 	title: string;
 }
+
+export interface ICrew {
+	name: string;
+	images: string;
+	bio: string;
+	role: string;
+}
+
+export interface IDot {
+	label: string;
+}

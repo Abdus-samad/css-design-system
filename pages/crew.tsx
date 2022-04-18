@@ -1,41 +1,164 @@
-import React from 'react';
+import Head from 'next/head';
+import React, { useState, Fragment } from 'react';
+import Crew from '../components/Dot/Crew';
+import { Dots } from '../components/Dot/Dots';
 import Header from '../components/Header';
+import { navigation } from '../data';
 
 const crew = () => {
+	const [drawer, setDrawer] = useState(false);
+	const handleClick = () => setDrawer(!drawer);
+
 	return (
-		<section>
-			<Header />
+		<section className='crew'>
+			<Head>
+				<title>Crew</title>
+			</Head>
+			<header className='primary-header flex '>
+				<div>
+					<img
+						src='/assets/shared/logo.svg'
+						alt='space tourism logo'
+						className='logo'
+					/>
+				</div>
+				<button onClick={handleClick} className='mobile-nav-toggle'>
+					<span className='sr-only' aria-expanded='false'>
+						Menu
+					</span>
+				</button>
+				<nav>
+					<ul
+						id='primary-navigation'
+						className={
+							drawer
+								? 'primary-navigation active flex underline-indicators'
+								: 'primary-navigation underline-indicators flex'
+						}>
+						<button
+							onClick={handleClick}
+							className='mobile-nav-toggle-close'>
+							<span className='sr-only' aria-expanded='false'>
+								Menu
+							</span>
+						</button>
+						{navigation.map((link, index) => (
+							<Header link={link} key={index} />
+						))}
+					</ul>
+				</nav>
+			</header>
+
 			<main className='grid-container grid-container--crew flow'>
 				<h2 className='numbered-title'>
 					<span>02</span>Meet your crew
 				</h2>
-				<div className='dot-indicators flex'>
-					<button aria-selected='true'>
-						<span className='sr-only'>slide</span>
-					</button>
-					<button>
-						<span className='sr-only'></span>
-					</button>
-					<button>
-						<span className='sr-only'></span>
-					</button>
-					<button>
-						<span className='sr-only'></span>
-					</button>
-				</div>
+				<Crew>
+					<>
+						<article
+							title='commander'
+							className='crew-details flow'>
+							<header className='flow flow-space--small'>
+								<h2 className='fs-600 uppercase'>Commander</h2>
+								<p className='fs-700 uppercase'>
+									Douglas Hurley
+								</p>
+							</header>
 
-				<article className='crew-details'>
-					<h2 className='uppercase fs-700'>Commander</h2>
-					<p className='uppercase fs-600'> Douglas Hurley</p>
-					<p>
-						Douglas Gerald Hurley is an American engineer, former
-						Marine Corps pilot and former NASA astronaut. He
-						launched into space for the third time as commander of
-						Crew Dragon Demo-2.
-					</p>
-				</article>
+							<p>
+								Douglas Gerald Hurley is an American engineer,
+								former Marine Corps pilot and former NASA
+								astronaut. He launched into space for the third
+								time as commander of Crew Dragon Demo-2.
+							</p>
+						</article>
 
-				<img src='assets/crew/image-douglas-hurley.png' alt='' />
+						<img
+							src='/assets/crew/image-douglas-hurley.png'
+							alt=''
+						/>
+					</>
+
+					<>
+						<article
+							title='The Mission Specialist'
+							className='crew-details flow'>
+							<header className='flow flow-space--small'>
+								<h2 className='fs-600 uppercase'>
+									Mission Specialist
+								</h2>
+								<p className='fs-700 uppercase'>
+									Mark Shuttleworth
+								</p>
+							</header>
+
+							<p>
+								Mark Richard Shuttleworth is the founder and CEO
+								of Canonical, the company behind the Linux-based
+								Ubuntu operating system. Shuttleworth became the
+								first South African to travel to space as a
+								space tourist.
+							</p>
+						</article>
+
+						<img
+							src='/assets/crew/image-mark-shuttleworth.png'
+							alt=''
+						/>
+					</>
+
+					<>
+						<article
+							title='The pilot'
+							className='crew-details flow'>
+							<header className='flow flow-space--small'>
+								<h2 className='fs-600 uppercase'>Pilot</h2>
+								<p className='fs-700 uppercase'>
+									Victor Glover
+								</p>
+							</header>
+
+							<p>
+								Pilot on the first operational flight of the
+								SpaceX Crew Dragon to the International Space
+								Station. Glover is a commander in the U.S. Navy
+								where he pilots an F/A-18.He was a crew member
+								of Expedition 64, and served as a station
+								systems flight engineer.
+							</p>
+						</article>
+
+						<img
+							src='/assets/crew/image-victor-glover.png'
+							alt=''
+						/>
+					</>
+					<>
+						<article title='engineer' className='crew-details flow'>
+							<header className='flow flow-space--small'>
+								<h2 className='fs-600 uppercase'>
+									Flight Engineer
+								</h2>
+								<p className='fs-700 uppercase'>
+									Anousheh Ansari
+								</p>
+							</header>
+
+							<p>
+								Anousheh Ansari is an Iranian American engineer
+								and co-founder of Prodea Systems. Ansari was the
+								fourth self-funded space tourist, the first
+								self-funded woman to fly to the ISS, and the
+								first Iranian in space.
+							</p>
+						</article>
+
+						<img
+							src='/assets/crew/image-anousheh-ansari.png'
+							alt=''
+						/>
+					</>
+				</Crew>
 			</main>
 		</section>
 	);
