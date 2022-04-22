@@ -1,9 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Destination from '../components/destination/Destination';
 import Header from '../components/Header';
-import { Tabs } from '../components/Tabs';
 import { navigation } from '../data';
 
 const destination = () => {
@@ -57,8 +55,8 @@ const destination = () => {
 				</h1>
 
 				<Destination>
-					<Fragment title='Moon'>
-						<article className='destination-info' title='Moon'>
+					<>
+						<article title='Moon' className='destination-info'>
 							<h2 className='fs-800 uppercase'>Moon</h2>
 							<p>
 								See our planet as you’ve never seen it before. A
@@ -88,14 +86,14 @@ const destination = () => {
 							</div>
 						</article>
 						<img src='/assets/destination/image-moon.png' alt='' />
-					</Fragment>
-					<Fragment title='Europa'>
+					</>
+					<>
 						<img
 							src='/assets/destination/image-europa.png'
 							alt=''
 						/>
 
-						<article className='destination-info'>
+						<article className='destination-info' title='Europa'>
 							<h2 className='fs-800 uppercase'>Europa</h2>
 							<p>
 								The smallest of the four Galilean moons orbiting
@@ -124,11 +122,10 @@ const destination = () => {
 								</div>
 							</div>
 						</article>
-					</Fragment>
-					<Fragment title='Mars'>
-						<img src='/assets/destination/image-mars.png' alt='' />
-
-						<article className='destination-info'>
+					</>
+					<>
+						<button title='Moon'>Moon</button>
+						<article title='Mars' className='destination-info'>
 							<h2 className='fs-800 uppercase'>Mars</h2>
 							<p>
 								Don’t forget to pack your hiking boots. You’ll
@@ -157,8 +154,9 @@ const destination = () => {
 								</div>
 							</div>
 						</article>
-					</Fragment>
-					<Fragment title='Titan'>
+						<img src='/assets/destination/image-mars.png' alt='' />
+					</>
+					<>
 						<article className='destination-info' title='Titan'>
 							<h2 className='fs-800 uppercase'>Titan</h2>
 							<p>
@@ -189,7 +187,7 @@ const destination = () => {
 							</div>
 						</article>
 						<img src='/assets/destination/image-titan.png' alt='' />
-					</Fragment>
+					</>
 				</Destination>
 			</main>
 		</section>

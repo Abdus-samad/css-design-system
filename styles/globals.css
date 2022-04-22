@@ -52,8 +52,7 @@ h6 {
 }
 
 /* set up the body */
-section,
-body {
+section {
 	font-size: var(--fs-400);
 	color: hsl(var(--clr-white));
 	background-color: hsl(var(--clr-dark));
@@ -394,8 +393,7 @@ select {
 	border-color: hsl(var(--clr-white) / 0.5);
 }
 
-.underline-indicators > .active,
-.underline-indicators > [aria-selected='true'] {
+.underline-indicators > .active{
 	color: hsl(var(--clr-white) / 1);
 	border-color: hsl(var(--clr-white) / 1);
 }
@@ -407,9 +405,7 @@ select {
 	cursor: pointer;
 	border: 0;
 	border-radius: 50%;
-	/* aspect-ratio: 1; */
-	width: 3%;
-	height: 20%;
+	aspect-ratio: 1;
 	padding: 0.5em;
 	background-color: hsl(var(--clr-white) / 0.25);
 }

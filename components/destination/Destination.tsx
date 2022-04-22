@@ -1,11 +1,11 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
-import { Tabs } from '../Tabs/Tabs';
+import { Tabs } from './Tabs';
 
 type TabsProps = {
 	children: ReactElement[];
 };
 const Destination: FunctionComponent<TabsProps> = ({ children }) => {
-	const [selectedTab, setSelectedTab] = useState(0);
+	const [selectdTab, setSelectdTab] = useState(0);
 	return (
 		<>
 			<div className='tab-list underline-indicators flex'>
@@ -14,12 +14,12 @@ const Destination: FunctionComponent<TabsProps> = ({ children }) => {
 						key={index}
 						title={item.props.title}
 						index={index}
-						selectedTab={selectedTab}
-						setSelectedTab={setSelectedTab}
+						selectedTab={selectdTab}
+						setSelectedTab={setSelectdTab}
 					/>
 				))}
 			</div>
-			{children[selectedTab]}
+			{children[selectdTab]}
 		</>
 	);
 };

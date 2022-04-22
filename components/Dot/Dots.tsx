@@ -1,4 +1,3 @@
-import { on } from 'events';
 import { FunctionComponent, useCallback } from 'react';
 
 type TabsProps = {
@@ -19,7 +18,7 @@ export const Dots: FunctionComponent<TabsProps> = ({
 	}, [setSelectedTab, index]);
 	return (
 		<button
-			className={`li ${selectedTab === index ? 'active' : ''}`}
+			className={`${selectedTab === index ? 'active' : ''}`}
 			onClick={onClick}>
 			<span className='sr-only'>{title}</span>
 		</button>

@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import React, { useState, Fragment } from 'react';
 import Crew from '../components/Dot/Crew';
-import { Dots } from '../components/Dot/Dots';
 import Header from '../components/Header';
 import { navigation } from '../data';
 

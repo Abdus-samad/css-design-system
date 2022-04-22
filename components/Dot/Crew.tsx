@@ -5,7 +5,7 @@ type TabsProps = {
 	children: ReactElement[];
 };
 
-export const Crew: FunctionComponent<TabsProps> = ({ children }) => {
+ const Crew: FunctionComponent<TabsProps> = ({ children }) => {
 	const [selectdTab, setSelectdTab] = useState(0);
 	return (
 		<>

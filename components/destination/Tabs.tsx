@@ -1,13 +1,13 @@
 import { FunctionComponent, useCallback } from 'react';
 
-type TabsProps = {
+type TabProps = {
 	title: string;
 	index: number;
 	setSelectedTab: (index: any) => void;
 	selectedTab: number;
 };
 
-export const Tabs: FunctionComponent<TabsProps> = ({
+export const Tabs: FunctionComponent<TabProps> = ({
 	index,
 	selectedTab,
 	setSelectedTab,
@@ -18,7 +18,7 @@ export const Tabs: FunctionComponent<TabsProps> = ({
 	}, [setSelectedTab, index]);
 	return (
 		<button
-			className={`uppercase text-accent letter-spacing-2 ${
+			className={` uppercase text-accent letter-spacing-2 ${
 				selectedTab === index ? 'active' : ''
 			}`}
 			onClick={onClick}>
@@ -26,5 +26,3 @@ export const Tabs: FunctionComponent<TabsProps> = ({
 		</button>
 	);
 };
-// let className = '';
-// if (active === value) className += ' active';
