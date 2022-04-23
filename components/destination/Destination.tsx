@@ -12,8 +12,8 @@ const Destination: FunctionComponent<TabsProps> = ({ children }) => {
 				{children.map((item, index) => (
 					<Tabs
 						key={index}
-						title={item.props.title}
 						index={index}
+						title={item.props.title}
 						selectedTab={selectdTab}
 						setSelectedTab={setSelectdTab}
 					/>

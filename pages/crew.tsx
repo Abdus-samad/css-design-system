@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React, { useState, Fragment } from 'react';
+import { Panel } from '../components/destination/Panel';
 import Crew from '../components/Dot/Crew';
 import Header from '../components/Header';
 import { navigation } from '../data';
@@ -53,10 +54,8 @@ const crew = () => {
 					<span>02</span>Meet your crew
 				</h2>
 				<Crew>
-					<>
-						<article
-							title='commander'
-							className='crew-details flow'>
+					<Panel title='commander'>
+						<article className='crew-details flow'>
 							<header className='flow flow-space--small'>
 								<h2 className='fs-600 uppercase'>Commander</h2>
 								<p className='fs-700 uppercase'>
@@ -76,12 +75,10 @@ const crew = () => {
 							src='/assets/crew/image-douglas-hurley.png'
 							alt=''
 						/>
-					</>
+					</Panel>
 
-					<>
-						<article
-							title='The Mission Specialist'
-							className='crew-details flow'>
+					<Panel title='The Mission Specialist'>
+						<article className='crew-details flow'>
 							<header className='flow flow-space--small'>
 								<h2 className='fs-600 uppercase'>
 									Mission Specialist
@@ -104,12 +101,10 @@ const crew = () => {
 							src='/assets/crew/image-mark-shuttleworth.png'
 							alt=''
 						/>
-					</>
+					</Panel>
 
-					<>
-						<article
-							title='The pilot'
-							className='crew-details flow'>
+					<Panel title='The pilot'>
+						<article className='crew-details flow'>
 							<header className='flow flow-space--small'>
 								<h2 className='fs-600 uppercase'>Pilot</h2>
 								<p className='fs-700 uppercase'>
@@ -131,9 +126,9 @@ const crew = () => {
 							src='/assets/crew/image-victor-glover.png'
 							alt=''
 						/>
-					</>
-					<>
-						<article title='engineer' className='crew-details flow'>
+					</Panel>
+					<Panel title='engineer'>
+						<article className='crew-details flow'>
 							<header className='flow flow-space--small'>
 								<h2 className='fs-600 uppercase'>
 									Flight Engineer
@@ -156,7 +151,7 @@ const crew = () => {
 							src='/assets/crew/image-anousheh-ansari.png'
 							alt=''
 						/>
-					</>
+					</Panel>
 				</Crew>
 			</main>
 		</section>

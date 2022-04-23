@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import Destination from '../components/destination/Destination';
+import { Panel } from '../components/destination/Panel';
 import Header from '../components/Header';
 import { navigation } from '../data';
 
@@ -55,8 +56,12 @@ const destination = () => {
 				</h1>
 
 				<Destination>
-					<>
-						<article title='Moon' className='destination-info'>
+					<Panel title='Moon'>
+						<img
+							src='/assets/destination/image-moon.png'
+							alt='Moon'
+						/>
+						<article className='destination-info'>
 							<h2 className='fs-800 uppercase'>Moon</h2>
 							<p>
 								See our planet as you’ve never seen it before. A
@@ -85,15 +90,15 @@ const destination = () => {
 								</div>
 							</div>
 						</article>
-						<img src='/assets/destination/image-moon.png' alt='' />
-					</>
-					<>
+					</Panel>
+
+					<Panel title='Europa'>
 						<img
 							src='/assets/destination/image-europa.png'
 							alt=''
 						/>
 
-						<article className='destination-info' title='Europa'>
+						<article className='destination-info'>
 							<h2 className='fs-800 uppercase'>Europa</h2>
 							<p>
 								The smallest of the four Galilean moons orbiting
@@ -122,9 +127,9 @@ const destination = () => {
 								</div>
 							</div>
 						</article>
-					</>
-					<>
-						<button title='Moon'>Moon</button>
+					</Panel>
+
+					<Panel title='Mars'>
 						<article title='Mars' className='destination-info'>
 							<h2 className='fs-800 uppercase'>Mars</h2>
 							<p>
@@ -155,9 +160,9 @@ const destination = () => {
 							</div>
 						</article>
 						<img src='/assets/destination/image-mars.png' alt='' />
-					</>
-					<>
-						<article className='destination-info' title='Titan'>
+					</Panel>
+					<Panel title='Titan'>
+						<article className='destination-info'>
 							<h2 className='fs-800 uppercase'>Titan</h2>
 							<p>
 								The only moon known to have a dense atmosphere
@@ -187,7 +192,7 @@ const destination = () => {
 							</div>
 						</article>
 						<img src='/assets/destination/image-titan.png' alt='' />
-					</>
+					</Panel>
 				</Destination>
 			</main>
 		</section>
