@@ -1,10 +1,10 @@
-import  { FunctionComponent, ReactElement, useState, } from 'react';
+import { FunctionComponent, ReactElement, useState } from 'react';
 import { Tabs } from './Tabs';
 
 type TabsProps = {
 	children: ReactElement[];
 };
-const Destination: FunctionComponent<TabsProps> = ({ children }) => {
+const DestinationPage: FunctionComponent<TabsProps> = ({ children }) => {
 	const [selectdTab, setSelectdTab] = useState(0);
 	return (
 		<>
@@ -24,4 +24,4 @@ const Destination: FunctionComponent<TabsProps> = ({ children }) => {
 	);
 };
 
-export default Destination;
+export default DestinationPage;

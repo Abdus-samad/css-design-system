@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import Destination from '../components/destination/Destination';
+import DestinationPage from '../components/destination/DestinationPage';
 import { Panel } from '../components/destination/Panel';
 import Header from '../components/Header';
 import { navigation } from '../data';
 
-const destination = () => {
+const Destination = () => {
 	const [drawer, setDrawer] = useState(false);
 	const handleClick = () => setDrawer(!drawer);
 
@@ -55,7 +55,7 @@ const destination = () => {
 					<span>01</span> Pick your destination
 				</h1>
 
-				<Destination>
+				<DestinationPage>
 					<Panel title='Moon'>
 						<img
 							src='/assets/destination/image-moon.png'
@@ -193,10 +193,10 @@ const destination = () => {
 						</article>
 						<img src='/assets/destination/image-titan.png' alt='' />
 					</Panel>
-				</Destination>
+				</DestinationPage>
 			</main>
 		</section>
 	);
 };
 
-export default destination;
+export default Destination;

@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { Panel } from '../components/destination/Panel';
-import Crew from '../components/Dot/Crew';
+import CrewPage from '../components/Dot/CrewPage';
 import Header from '../components/Header';
 import { navigation } from '../data';
 
-const crew = () => {
+const Crew = () => {
 	const [drawer, setDrawer] = useState(false);
 	const handleClick = () => setDrawer(!drawer);
 
@@ -53,7 +53,7 @@ const crew = () => {
 				<h2 className='numbered-title'>
 					<span>02</span>Meet your crew
 				</h2>
-				<Crew>
+				<CrewPage>
 					<Panel title='commander'>
 						<article className='crew-details flow'>
 							<header className='flow flow-space--small'>
@@ -152,10 +152,10 @@ const crew = () => {
 							alt=''
 						/>
 					</Panel>
-				</Crew>
+				</CrewPage>
 			</main>
 		</section>
 	);
 };
 
-export default crew;
+export default Crew;
