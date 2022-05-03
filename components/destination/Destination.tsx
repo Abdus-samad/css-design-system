@@ -1,4 +1,4 @@
-import  { FunctionComponent, ReactElement, useState } from 'react';
+import  { FunctionComponent, ReactElement, useState, } from 'react';
 import { Tabs } from './Tabs';
 
 type TabsProps = {
