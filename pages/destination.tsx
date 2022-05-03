@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { Fragment, useState } from 'react';
+import { useState } from 'react';
 import Destination from '../components/destination/Destination';
 import { Panel } from '../components/destination/Panel';
 import Header from '../components/Header';
@@ -32,7 +32,7 @@ const destination = () => {
 						id='primary-navigation'
 						className={
 							drawer
-								? 'primary-navigation active flex underline-indicators'
+								? 'primary-navigation flex underline-indicators'
 								: 'primary-navigation underline-indicators flex'
 						}>
 						<button

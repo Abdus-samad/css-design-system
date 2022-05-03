@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState, Fragment } from 'react';
+import { useState } from 'react';
 import { Panel } from '../components/destination/Panel';
 import Crew from '../components/Dot/Crew';
 import Header from '../components/Header';
