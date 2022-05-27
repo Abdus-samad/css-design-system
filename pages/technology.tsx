@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import TechPage from "../components/technology/TechPage";
 import { navigation } from "../data";
 
-const technology = () => {
+const Technology = () => {
   const [drawer, setDrawer] = useState(false);
   const handleClick = () => setDrawer(!drawer);
   return (
@@ -135,4 +135,4 @@ const technology = () => {
   );
 };
 
-export default technology;
+export default Technology;
