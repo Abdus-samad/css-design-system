@@ -11,7 +11,7 @@ const technology = () => {
   return (
     <section className='technology'>
       <Head>
-        <title>Space X</title>
+        <title>TechNology</title>
       </Head>
       <header className='primary-header flex '>
         <div>

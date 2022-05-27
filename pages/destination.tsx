@@ -97,7 +97,6 @@ const Destination = () => {
 							src='/assets/destination/image-europa.png'
 							alt=''
 						/>
-
 						<article className='destination-info'>
 							<h2 className='fs-800 uppercase'>Europa</h2>
 							<p>
