@@ -32,7 +32,7 @@ const Destination = () => {
 						id='primary-navigation'
 						className={
 							drawer
-								? 'primary-navigation flex underline-indicators'
+								? 'primary-navigation active flex underline-indicators'
 								: 'primary-navigation underline-indicators flex'
 						}>
 						<button

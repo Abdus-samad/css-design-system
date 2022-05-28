@@ -397,7 +397,7 @@ select {
   border-color: hsl(var(--clr-white) / 1);
 }
 .tab-list {
-  --gap: 2.5rem;
+  --gap: 1.5rem;
 }
 
 .dot-indicators > * {
